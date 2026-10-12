@@ -85,6 +85,7 @@ public class VistaRectangulo extends javax.swing.JFrame {
         jLabel8.setText("Mover y");
 
         btnMover.setText("Mover");
+        btnMover.addActionListener(this::btnMoverActionPerformed);
 
         jLabel9.setText("Factor");
 
@@ -223,6 +224,12 @@ public class VistaRectangulo extends javax.swing.JFrame {
         double py = Double.parseDouble(txtPy.getText());
         txaResultado.setText(controlador.verificarPunto(px, py));
     }//GEN-LAST:event_btnVerificarActionPerformed
+
+    private void btnMoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoverActionPerformed
+        double dx = Double.parseDouble(txtDx.getText());
+        double dy = Double.parseDouble(txtDy.getText());
+        txaResultado.setText(controlador.mover(dx, dy));
+    }//GEN-LAST:event_btnMoverActionPerformed
 
     /**
      * @param args the command line arguments

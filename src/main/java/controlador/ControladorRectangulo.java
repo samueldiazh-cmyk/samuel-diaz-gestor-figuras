@@ -44,4 +44,11 @@ public class ControladorRectangulo {
             return "El punto (" + px + ", " + py + ") NO esta dentro del rectangulo";
         }
     }
+      public String mover(double dx, double dy) {
+        if (rectangulo == null) {
+            return "Primero cree el rectangulo";
+        }
+        rectangulo.mover(dx, dy);
+        return "Rectangulo movido:\n" + rectangulo.toString();
+    }
 }
