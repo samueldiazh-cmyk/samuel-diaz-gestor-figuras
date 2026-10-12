@@ -24,4 +24,24 @@ public class ControladorRectangulo {
         }
         return "Area: " + rectangulo.calcularArea() + "\nPerimetro: " + rectangulo.calcularPerimetro();
     }
+      public String verificarPunto(double px, double py) {
+        if (rectangulo == null) {
+            return "Primero cree el rectangulo";
+        }
+        double x1 = rectangulo.getEsquina1().getX();
+        double y1 = rectangulo.getEsquina1().getY();
+        double x2 = rectangulo.getEsquina2().getX();
+        double y2 = rectangulo.getEsquina2().getY();
+
+        double xMin = Math.min(x1, x2);
+        double xMax = Math.max(x1, x2);
+        double yMin = Math.min(y1, y2);
+        double yMax = Math.max(y1, y2);
+
+        if (px >= xMin && px <= xMax && py >= yMin && py <= yMax) {
+            return "El punto (" + px + ", " + py + ") SI esta dentro del rectangulo";
+        } else {
+            return "El punto (" + px + ", " + py + ") NO esta dentro del rectangulo";
+        }
+    }
 }

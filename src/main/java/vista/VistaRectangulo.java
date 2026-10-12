@@ -78,6 +78,7 @@ public class VistaRectangulo extends javax.swing.JFrame {
         jLabel6.setText("punto Y");
 
         btnVerificar.setText("punto dentro");
+        btnVerificar.addActionListener(this::btnVerificarActionPerformed);
 
         jLabel7.setText("Mover x");
 
@@ -216,6 +217,12 @@ public class VistaRectangulo extends javax.swing.JFrame {
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
                 txaResultado.setText(controlador.calcularAreaPerimetro());
     }//GEN-LAST:event_btnAreaActionPerformed
+
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+        double px = Double.parseDouble(txtPx.getText());
+        double py = Double.parseDouble(txtPy.getText());
+        txaResultado.setText(controlador.verificarPunto(px, py));
+    }//GEN-LAST:event_btnVerificarActionPerformed
 
     /**
      * @param args the command line arguments
