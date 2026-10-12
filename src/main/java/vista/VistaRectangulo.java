@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-
+import controlador.ControladorRectangulo;
 /**
  *
  * @author cdval
  */
 public class VistaRectangulo extends javax.swing.JFrame {
+    private ControladorRectangulo controlador = new ControladorRectangulo();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaRectangulo.class.getName());
 
@@ -69,6 +70,7 @@ public class VistaRectangulo extends javax.swing.JFrame {
         jLabel5.setText("punto X");
 
         btnCrear.setText("crear");
+        btnCrear.addActionListener(this::btnCrearActionPerformed);
 
         btnArea.setText("Area rectangulo");
 
@@ -201,6 +203,14 @@ public class VistaRectangulo extends javax.swing.JFrame {
     private void txtX1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtX1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtX1ActionPerformed
+
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+                double x1 = Double.parseDouble(txtX1.getText());
+        double y1 = Double.parseDouble(txtY1.getText());
+        double x2 = Double.parseDouble(txtX2.getText());
+        double y2 = Double.parseDouble(txtY2.getText());
+        txaResultado.setText(controlador.crearRectangulo(x1, y1, x2, y2));
+    }//GEN-LAST:event_btnCrearActionPerformed
 
     /**
      * @param args the command line arguments

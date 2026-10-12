@@ -4,13 +4,13 @@
 
 package com.mycompany.gestorfiguras;
 
-/**
- *
- * @author cdval
- */
+import vista.VistaRectangulo;
+
 public class GestorFiguras {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VistaRectangulo vista = new VistaRectangulo();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
     }
 }
