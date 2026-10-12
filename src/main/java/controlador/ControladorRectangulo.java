@@ -51,4 +51,18 @@ public class ControladorRectangulo {
         rectangulo.mover(dx, dy);
         return "Rectangulo movido:\n" + rectangulo.toString();
     }
+      public String escalar(double factor) {
+        if (rectangulo == null) {
+            return "Primero cree el rectangulo";
+        }
+        if (factor <= 0) {
+            return "El factor debe ser mayor que cero";
+        }
+        Punto e1 = rectangulo.getEsquina1();
+        Punto e2 = rectangulo.getEsquina2();
+        e2.setX(e1.getX() + (e2.getX() - e1.getX()) * factor);
+        e2.setY(e1.getY() + (e2.getY() - e1.getY()) * factor);
+        return "Rectangulo escalado x" + factor + ":\n" + rectangulo.toString()
+                + "\nNueva area: " + rectangulo.calcularArea();
+    }
 }

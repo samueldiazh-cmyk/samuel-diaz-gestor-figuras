@@ -90,6 +90,7 @@ public class VistaRectangulo extends javax.swing.JFrame {
         jLabel9.setText("Factor");
 
         btnEscalar.setText("Escalar");
+        btnEscalar.addActionListener(this::btnEscalarActionPerformed);
 
         txaResultado.setColumns(20);
         txaResultado.setRows(5);
@@ -230,6 +231,11 @@ public class VistaRectangulo extends javax.swing.JFrame {
         double dy = Double.parseDouble(txtDy.getText());
         txaResultado.setText(controlador.mover(dx, dy));
     }//GEN-LAST:event_btnMoverActionPerformed
+
+    private void btnEscalarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscalarActionPerformed
+        double factor = Double.parseDouble(txtFactor.getText());
+        txaResultado.setText(controlador.escalar(factor));
+    }//GEN-LAST:event_btnEscalarActionPerformed
 
     /**
      * @param args the command line arguments
