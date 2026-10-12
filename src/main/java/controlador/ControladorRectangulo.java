@@ -18,4 +18,10 @@ public class ControladorRectangulo {
         rectangulo = new Rectangulo(new Punto(x1, y1), new Punto(x2, y2));
         return "Rectangulo creado:\n" + rectangulo.toString();
     }
+      public String calcularAreaPerimetro() {
+        if (rectangulo == null) {
+            return "Primero cree el rectangulo";
+        }
+        return "Area: " + rectangulo.calcularArea() + "\nPerimetro: " + rectangulo.calcularPerimetro();
+    }
 }
